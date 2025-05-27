@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pago Cancelado / Payment Cancelled</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 1.8em;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    hr {
+      margin: 2em 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pago cancelado o no completado</h1>
+  <p>Si necesitas ayuda, contáctanos.</p>
+  <p><a href="https://www.espacioartistic.es/tibetana">Volver a la página de Tibetana</a></p>
+
+  <hr>
+
+  <h1>Payment cancelled or not completed</h1>
+  <p>If you need help, feel free to contact us.</p>
+  <p><a href="https://www.espacioartistic.es/tibetana">Return to the Tibetana page</a></p>
+</body>
+</html>
