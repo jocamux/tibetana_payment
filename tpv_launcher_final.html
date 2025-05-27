@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirigiendo a TPV...</title>
+</head>
+<body>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const numOperacion = params.get("op");
+    const firma = params.get("firma");
+    const importe = "5000"; // fijo: 50€ * 100 (exponente = 2)
+
+    if (!numOperacion || !firma) {
+        document.body.innerHTML = "<h2>Error: Faltan parámetros de firma o número de operación.</h2>";
+        throw new Error("Faltan parámetros obligatorios");
+    }
+
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = "https://tpv.ceca.es/tpvweb/tpv/compra.action";
+    form.target = "_self";
+
+    const fields = {
+        MerchantID: "243040920",
+        AcquirerBIN: "0000270488",
+        TerminalID: "00000003",
+        Num_operacion: numOperacion,
+        Importe: importe,
+        TipoMoneda: "978",
+        Exponente: "2",
+        Cifrado: "SHA2",
+        URL_OK: "https://tibetana.games/",
+        URL_NOK: "https://tibetana.games/forma_de_pago",
+        Firma: firma,
+        Pago_soportado: "SSL",
+        Idioma: "1"
+    };
+
+    for (const [name, value] of Object.entries(fields)) {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = name;
+        input.value = value;
+        form.appendChild(input);
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+</script>
+<p>Redirigiendo al TPV de pago...</p>
+</body>
+</html>
