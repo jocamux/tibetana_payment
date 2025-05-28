@@ -9,7 +9,7 @@
     const params = new URLSearchParams(window.location.search);
     const numOperacion = params.get("op");
     const firma = params.get("firma");
-    const importe = "5000"; // fijo: 50€ * 100 (exponente = 2)
+    const importe = params.get("importe"); // fijo: 50€ * 100 (exponente = 2)
 
     if (!numOperacion || !firma) {
         document.body.innerHTML = "<h2>Error: Faltan parámetros de firma o número de operación.</h2>";
